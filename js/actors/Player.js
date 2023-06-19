@@ -16,9 +16,9 @@ class Player {
         if (keys.left) this.speed.x -= playerXSpeed;
         if (keys.right) this.speed.x += playerXSpeed;
 
-        var motion = new Vector(this.speed.x * step, 0);
-        var newPos = this.pos.plus(motion);
-        var obstacle = level.obstacleAt(newPos, this.size);
+        const motion = new Vector(this.speed.x * step, 0);
+        const newPos = this.pos.plus(motion);
+        const obstacle = level.obstacleAt(newPos, this.size);
         if (obstacle)
             level.playerTouched(obstacle);
         else
@@ -27,9 +27,9 @@ class Player {
 
     moveY(step, level, keys) {
         this.speed.y += step * gravity;
-        var motion = new Vector(0, this.speed.y * step);
-        var newPos = this.pos.plus(motion);
-        var obstacle = level.obstacleAt(newPos, this.size);
+        const motion = new Vector(0, this.speed.y * step);
+        const newPos = this.pos.plus(motion);
+        const obstacle = level.obstacleAt(newPos, this.size);
         if (obstacle) {
             level.playerTouched(obstacle);
             if (keys.up && this.speed.y > 0)

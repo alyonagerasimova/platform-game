@@ -1,4 +1,4 @@
-var simpleLevelPlan = [
+const simpleLevelPlan = [
     "                      ",
     "                      ",
     "  x              = x  ",
@@ -9,7 +9,7 @@ var simpleLevelPlan = [
     "      xxxxxxxxxxxxxx  ",
     "                      "
 ];
-var GAME_LEVELS = [
+const GAME_LEVELS = [
     ["                                                                                ",
         "                                                                                ",
         "                                                                                ",

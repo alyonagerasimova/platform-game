@@ -1,6 +1,3 @@
-// var simpleLevel = new Level(simpleLevelPlan);
-// var display = new DOMDisplay(document.body, simpleLevel);
-
 const arrowCodes = {37: "left", 38: "up", 39: "right"};
 
 function trackKeys(codes) {
@@ -8,8 +5,7 @@ function trackKeys(codes) {
 
     function handler(event) {
         if (codes.hasOwnProperty(event.keyCode)) {
-            const down = event.type === "keydown";
-            pressed[codes[event.keyCode]] = down;
+            pressed[codes[event.keyCode]] = event.type === "keydown";
             event.preventDefault();
         }
     }
@@ -54,12 +50,6 @@ function runLevel(level, Display, andThen) {
 
 function runGame(plans, Display) {
     let countLife = 3;
-    // const wrap = elt("div");
-    // console.log(document.getElementsByClassName(".game"))
-    // for (let i = 0; i < countLife; i++) {
-    //     const rect = wrap.appendChild(elt("div", "heart "));
-    // }
-    // document.getElementsByTagName("table").appendChild(wrap);
 
     function startLevel(n) {
         runLevel(new Level(plans[n]), Display, function (status) {
